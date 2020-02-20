@@ -4,7 +4,6 @@
      <Nav/>
        <header class="masthead" style="background-image: url('https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg')">
     <div class="overlay"></div>
-    <article class="Abc">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -15,15 +14,16 @@
         </div>
       </div>
     </div>
-    </article>
   </header>
-   <div class="container">
+   <article class="abc">
+       <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <slot name="content"></slot>
       </div>
     </div>
    </div>
+   </article>
   <!-- footer start-->
      <Footer/>
  </div>   
@@ -42,8 +42,7 @@ export default {
 </script>
 <style>
 .abc {
-
-  background-color:brown;
+ background-color:brown;
 }
 
 </style>

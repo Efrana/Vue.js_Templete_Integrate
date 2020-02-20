@@ -9,16 +9,24 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <router-link :to="{ name: 'Home' }">
+                    <span class="nav-title">Home</span>
+                </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <router-link :to="{ name: 'About' }">
+                    <span class="nav-title">About</span>
+                </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
+           <router-link :to="{ name: 'Sample' }">
+                    <span class="nav-title">Sample</span>
+                </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <router-link :to="{ name: 'Contact' }">
+                    <span class="nav-title">Contact</span>
+                </router-link>
           </li>
         </ul>
       </div>
