@@ -2,19 +2,7 @@
  <div>
       <!-- nav start-->
      <Nav/>
-       <header class="masthead" style="background-image: url('https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+     <SampleHeader v-bind:headerContent="headerContent"></SampleHeader>
    <article class="abc">
        <div class="container">
     <div class="row">
@@ -32,17 +20,17 @@
 <script>
 import Nav from './Partial/Nav'
 import Footer from './Partial/Footer'
+import SampleHeader from './Partial/SampleHeader'
 export default {
     name: 'NewMaster',
+    props:["headerContent"],
     components: {
       Nav,
-      Footer
+      Footer,
+      SampleHeader
     }
 }
 </script>
 <style>
-.abc {
- background-color:brown;
-}
 
 </style>

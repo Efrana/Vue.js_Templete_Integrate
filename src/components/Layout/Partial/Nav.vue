@@ -20,7 +20,7 @@
           </li>
           <li class="nav-item">
            <router-link :to="{ name: 'Sample' }">
-                    <span class="nav-title">Sample</span>
+                    <span class="nav-title">Sample Post</span>
                 </router-link>
           </li>
           <li class="nav-item">

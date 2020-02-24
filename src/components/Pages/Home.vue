@@ -1,18 +1,43 @@
 <template>
     <div>
-        <Master>
+        <Master v-bind:headerContent="headerContent">
             <template v-slot:content>
-                <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+            <div v-for="post in posts" :key="post.id">
+                <h3>{{ post.title}}</h3>
+                <p>{{post.body}}</p>
+                <hr>
+            </div>
+            <div class="clearfix">
+             <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+           </div>
             </template>
         </Master>
         </div>
 </template>
 <script>
 import Master from '../Layout/Master'
+import axios from 'axios'
 export default {
     name: 'Home',
     components:{
         Master
+    },
+    data(){
+        return{
+            posts:[],
+            headerContent:{
+                backgroundImage:"https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg",
+                heading:"Clean Blog",
+                subheading:"A Blog Theme by Start Bootstrap"
+            }
+        }
+    },
+    created(){
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then(response=>{
+          console.log(response)
+          this.posts=response.data
+        })
     }
 
 }

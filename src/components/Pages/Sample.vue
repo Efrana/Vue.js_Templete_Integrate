@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Master>
+        <NewMaster v-bind:headerContent="headerContent">
             <template v-slot:content>
                           <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
 
@@ -39,15 +39,24 @@
             <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
             <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
             </template>
-        </Master>
+        </NewMaster>
         </div>
 </template>
 <script>
-import Master from '../Layout/Master'
+import NewMaster from '../Layout/NewMaster'
 export default {
     name: 'Sample',
     components:{
-        Master
+        NewMaster
+    },
+    data(){
+      return{
+        headerContent:{
+        backgroundImage:"https://blackrockdigital.github.io/startbootstrap-clean-blog/img/post-bg.jpg",
+        heading:"Man must explore, and this is exploration at its greatest",
+        subheading:"Problems look mighty small from 150 miles up"
+            }
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Master>
+        <Master v-bind:headerContent="headerContent">
             <template v-slot:content>
                         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
         <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
@@ -51,6 +51,15 @@ export default {
     name: 'Contact',
     components:{
         Master
+    },
+  data(){
+    return{
+       headerContent:{
+         backgroundImage:"https://blackrockdigital.github.io/startbootstrap-clean-blog/img/contact-bg.jpg",
+         heading:"Contact Me",
+         subheading:"Have questions? I have answers"
+            }
+        }
     }
 
 }
